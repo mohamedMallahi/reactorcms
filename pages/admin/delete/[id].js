@@ -18,8 +18,12 @@ export default function Delete() {
       <h2>Delete Todo</h2>
       <p>Are you sure you want delete this todo</p>
       <form onSubmit={deleteHandler}>
-        <button type="submit">Yes</button>
-        <Link href="/admin">No</Link>
+        <button className="btn" type="submit">
+          Yes
+        </button>
+        <Link href="/admin">
+          <a className="btn-outlined">No</a>
+        </Link>
       </form>
     </>
   );
