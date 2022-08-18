@@ -2,6 +2,10 @@ body {
   padding: 0;
 }
 
+main {
+  padding: 0 1rem;
+}
+
 .completed {
   color: green;
 }
@@ -16,4 +20,26 @@ li {
   background-color: royalblue;
   padding: 1rem;
   color: #fff;
+}
+
+table {
+  width: 100%;
+}
+
+table,
+th,
+td {
+  border: 1px solid #333;
+  border-collapse: collapse;
+}
+
+thead,
+tfoot {
+  background-color: #333;
+  color: #fff;
+}
+
+th,
+td {
+  padding: 0.5rem 0.5rem;
 }

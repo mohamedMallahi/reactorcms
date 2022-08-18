@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Head from 'next/head';
+import Link from 'next/link';
 import { server } from '../../config';
 
 export default function Admin({ todos }) {
@@ -21,8 +21,8 @@ export default function Admin({ todos }) {
               <td>{todo.title}</td>
               <td>{todo.id}</td>
               <td>
-                <button>Edit</button>
-                <button>Delete</button>
+                <Link href={`/admin/edit/${todo.id}`}>Edit</Link>
+                <Link href={`/admin/delete/${todo.id}`}>Delete</Link>
               </td>
             </tr>
           ))}
