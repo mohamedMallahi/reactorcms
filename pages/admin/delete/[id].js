@@ -1,10 +1,15 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+
 import { server } from '../../../config';
 
 export default function Delete() {
+  const router = useRouter();
+  const { id } = router.query;
+
   const deleteHandler = async (e) => {
     e.preventDefault();
-    const res = await fetch('/api/todos/1', {
+    const res = await fetch('/api/todos/' + id, {
       method: 'DELETE',
     });
     const data = await res.json();
