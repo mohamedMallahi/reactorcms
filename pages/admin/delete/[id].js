@@ -3,6 +3,7 @@ import { server } from '../../../config';
 
 export default function Delete() {
   const deleteHandler = async (e) => {
+    e.preventDefault();
     const res = await fetch('/api/todos/1', {
       method: 'DELETE',
     });
