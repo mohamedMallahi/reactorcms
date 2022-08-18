@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import Head from 'next/head';
-import { server } from '../config';
+import { server } from '../../config';
 
-export default function Home({ todos }) {
+export default function Admin({ todos }) {
   return (
     <>
       <h1>Admin</h1>
