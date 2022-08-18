@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
-import { server } from '../../config';
+import { server } from '../../../config';
 
 export default function Delete() {
   return (
