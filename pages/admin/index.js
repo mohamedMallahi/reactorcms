@@ -21,8 +21,12 @@ export default function Admin({ todos }) {
               <td>{todo.title}</td>
               <td>{todo.id}</td>
               <td>
-                <Link href={`/admin/edit/${todo.id}`}>Edit</Link>
-                <Link href={`/admin/delete/${todo.id}`}>Delete</Link>
+                <Link href={`/admin/edit/${todo.id}`}>
+                  <a className="btn">Edit</a>
+                </Link>
+                <Link href={`/admin/delete/${todo.id}`}>
+                  <a className="btn-outlined">Delete</a>
+                </Link>
               </td>
             </tr>
           ))}
