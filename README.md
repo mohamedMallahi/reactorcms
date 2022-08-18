@@ -1,3 +1,3 @@
-# reactorcms
+# Reactor CMS
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/nextjs-hjeswq)
+Content Mangment System built with Next.js and Postgress and uses JWT authentication

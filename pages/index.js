@@ -1,6 +1,10 @@
 import Head from 'next/head';
 
-export default function Home({ todos }) {
+export default function Home({ todos, err }) {
+  if (err) {
+    console.log(err);
+    return <h1>Error</h1>;
+  }
   return (
     <>
       <h1>Todos</h1>
@@ -27,7 +31,7 @@ export async function getServerSideProps(context) {
   } catch (err) {
     console.log(err);
     return {
-      props: {},
+      props: { err },
     };
   }
 }
