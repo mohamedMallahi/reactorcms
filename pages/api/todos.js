@@ -63,5 +63,15 @@ export default (req, res) => {
       completed: true,
     },
   ];
-  res.status(200).json({ todos: DUMMY_DB });
+  if (req.method === 'GET') {
+    res.status(200).json({ todos: DUMMY_DB });
+  } else if (req.method === 'POST') {
+    res.status(200).json({
+      message: 'Created successfully',
+      newTodo: {
+        id: Math.floor(Math.random() * 1000000),
+        title: req.body.title,
+      },
+    });
+  }
 };
