@@ -62,7 +62,8 @@ const handler = (req, res) => {
     },
   ];
   if (req.method === 'DELETE') {
-    res.status(200).json({ message: 'Deleted succesfully' });
+    const { id } = req.query;
+    res.status(200).json({ message: 'Deleted succesfully', id });
   }
 };
 
