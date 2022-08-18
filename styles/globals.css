@@ -1,0 +1,19 @@
+body {
+  padding: 0;
+}
+
+.completed {
+  color: green;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+  background-color: royalblue;
+  padding: 1rem;
+  color: #fff;
+}
