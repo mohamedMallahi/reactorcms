@@ -4,7 +4,7 @@ import { useForm } from '../hooks';
 import { server } from '../config';
 
 export default function Home({ posts }) {
-  const [values, changeHandler] = useState({ title: '', body: '' });
+  const [values, changeHandler] = useForm({ title: '', body: '' });
 
   const submitHandler = async (e) => {
     e.preventDefault();

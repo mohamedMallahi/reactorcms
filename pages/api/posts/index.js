@@ -5,70 +5,41 @@ export default (req, res) => {
     {
       userId: 1,
       id: 1,
-      title: 'delectus aut autem',
-      completed: false,
+      title:
+        'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
+      body: 'quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto',
     },
     {
       userId: 1,
       id: 2,
-      title: 'quis ut nam facilis et officia qui',
-      completed: false,
+      title: 'qui est esse',
+      body: 'est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla',
     },
     {
       userId: 1,
       id: 3,
-      title: 'fugiat veniam minus',
-      completed: false,
+      title: 'ea molestias quasi exercitationem repellat qui ipsa sit aut',
+      body: 'et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut',
     },
     {
       userId: 1,
       id: 4,
-      title: 'et porro tempora',
-      completed: true,
+      title: 'eum et est occaecati',
+      body: 'ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit',
     },
     {
       userId: 1,
       id: 5,
-      title: 'laboriosam mollitia et enim quasi adipisci quia provident illum',
-      completed: false,
-    },
-    {
-      userId: 1,
-      id: 6,
-      title: 'qui ullam ratione quibusdam voluptatem quia omnis',
-      completed: false,
-    },
-    {
-      userId: 1,
-      id: 7,
-      title: 'illo expedita consequatur quia in',
-      completed: false,
-    },
-    {
-      userId: 1,
-      id: 8,
-      title: 'quo adipisci enim quam ut ab',
-      completed: true,
-    },
-    {
-      userId: 1,
-      id: 9,
-      title: 'molestiae perspiciatis ipsa',
-      completed: false,
-    },
-    {
-      userId: 1,
-      id: 10,
-      title: 'illo est ratione doloremque quia maiores aut',
-      completed: true,
+      title: 'nesciunt quas odio',
+      body: 'repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque',
     },
   ];
   if (req.method === 'GET') {
-    res.status(200).json({ todos: DUMMY_DB });
+    res.status(200).json({ posts: DUMMY_DB });
   } else if (req.method === 'POST') {
     res.status(200).json({
       message: 'Created successfully',
-      newTodo: {
+      newPost: {
         id: Math.floor(Math.random() * 1000000),
         title: req.body.title,
       },
