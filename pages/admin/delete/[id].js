@@ -9,7 +9,7 @@ export default function Delete() {
 
   const deleteHandler = async (e) => {
     e.preventDefault();
-    const res = await fetch('/api/todos/' + id, {
+    const res = await fetch('/api/posts/' + id, {
       method: 'DELETE',
     });
     const data = await res.json();

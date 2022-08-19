@@ -2,11 +2,11 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { server } from '../../config';
 
-export default function Admin({ todos }) {
+export default function Admin({ posts }) {
   return (
     <>
       <h1>Admin</h1>
-      <h2>All Todos</h2>
+      <h2>All posts</h2>
       <table>
         <thead>
           <tr>
@@ -16,15 +16,15 @@ export default function Admin({ todos }) {
           </tr>
         </thead>
         <tbody>
-          {todos.map((todo) => (
-            <tr className={todo.completed && 'completed'} key={todo.id}>
-              <td>{todo.title}</td>
-              <td>{todo.id}</td>
+          {posts.map((post) => (
+            <tr className={post.completed && 'completed'} key={post.id}>
+              <td>{post.title}</td>
+              <td>{post.id}</td>
               <td>
-                <Link href={`/admin/edit/${todo.id}`}>
+                <Link href={`/admin/edit/${post.id}`}>
                   <a className="btn">Edit</a>
                 </Link>
-                <Link href={`/admin/delete/${todo.id}`}>
+                <Link href={`/admin/delete/${post.id}`}>
                   <a className="btn-outlined">Delete</a>
                 </Link>
               </td>
@@ -37,11 +37,11 @@ export default function Admin({ todos }) {
 }
 
 export async function getServerSideProps(context) {
-  const res = await fetch(server + '/api/todos');
+  const res = await fetch(server + '/api/posts');
   const data = await res.json();
   return {
     props: {
-      todos: data.todos,
+      posts: data.posts,
     },
   };
 }
