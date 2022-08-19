@@ -3,7 +3,7 @@ export default function Navbar() {
     <nav class="py-3 navbar-dark bg-dark text-center">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
-          Reactot CMS
+          Reactor CMS
         </a>
       </div>
     </nav>

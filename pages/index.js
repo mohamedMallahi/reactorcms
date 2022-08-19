@@ -26,6 +26,7 @@ export default function Home({ posts }) {
         <div className="mb-3">
           <label for="title">Title</label>
           <input
+            className="form-control"
             value={values.title}
             id="title"
             name="title"
@@ -36,6 +37,7 @@ export default function Home({ posts }) {
         <div className="mb-3">
           <label for="body">Body</label>
           <textarea
+            className="form-control"
             value={values.body}
             id="body"
             name="body"
@@ -46,17 +48,19 @@ export default function Home({ posts }) {
           Add
         </button>
       </form>
-      <div className="d-flex">
+      <div className="d-flex flex-column">
         {posts.map((post) => (
-          <div key={post.id} className=" card card-body">
-            <h5 className="card-title">{post.title}</h5>
+          <div key={post.id} className=" card card-body my-2">
+            <h5 className="card-title text-capitalize">{post.title}</h5>
             <p className="card-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </p>
-            <Link href={`/post/${post.id}`}>
-              <a className="btn btn-primary">Read More</a>
-            </Link>
+            <div>
+              <Link href={`/post/${post.id}`}>
+                <a className="btn btn-primary">Read More</a>
+              </Link>
+            </div>
           </div>
         ))}
       </div>
