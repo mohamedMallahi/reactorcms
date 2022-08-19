@@ -4,7 +4,7 @@ import { useForm } from '../hooks';
 import { server } from '../config';
 
 export default function Home({ todos }) {
-  const [values, changeHandler] = useState({ title: '', body });
+  const [values, changeHandler] = useState({ title: '', body: '' });
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -47,10 +47,17 @@ export default function Home({ todos }) {
         </button>
       </form>
       <ul className="list-group">
-        {todos.map((todo) => (
-          <li className="list-group-item" key={todo.id}>
-            {todo.title}
-          </li>
+        {posts.map((post) => (
+          <div key={post.id} className=" card card-body">
+            <h5 className="card-title">{post.title}</h5>
+            <p className="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <a href="#" className="btn btn-primary">
+              Go somewhere
+            </a>
+          </div>
         ))}
       </ul>
     </>
