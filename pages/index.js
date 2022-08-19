@@ -3,12 +3,12 @@ import Head from 'next/head';
 import { useForm } from '../hooks';
 import { server } from '../config';
 
-export default function Home({ todos }) {
+export default function Home({ posts }) {
   const [values, changeHandler] = useState({ title: '', body: '' });
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    const res = await fetch('/api/todos', {
+    const res = await fetch('/api/posts', {
       method: 'POST',
       body: {
         title: state.title,
@@ -21,7 +21,7 @@ export default function Home({ todos }) {
 
   return (
     <>
-      <h1>Todos</h1>
+      <h1>Posts</h1>
       <form onSubmit={submitHandler}>
         <div className="mb-3">
           <label for="title">Title</label>
@@ -46,7 +46,7 @@ export default function Home({ todos }) {
           Add
         </button>
       </form>
-      <ul className="list-group">
+      <div className="d-flex">
         {posts.map((post) => (
           <div key={post.id} className=" card card-body">
             <h5 className="card-title">{post.title}</h5>
@@ -65,11 +65,11 @@ export default function Home({ todos }) {
 }
 
 export async function getServerSideProps(context) {
-  const res = await fetch(server + '/api/todos');
+  const res = await fetch(server + '/api/posts');
   const data = await res.json();
   return {
     props: {
-      todos: data.todos,
+      posts: data.posts,
     },
   };
 }
