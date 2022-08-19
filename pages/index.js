@@ -1,16 +1,10 @@
 import { useState } from 'react';
 import Head from 'next/head';
+import { useForm } from '../hooks';
 import { server } from '../config';
 
 export default function Home({ todos }) {
-  const [state, setState] = useState({ title: '' });
-
-  const changeHandler = (e) => {
-    setState({
-      ...state,
-      title: e.target.value,
-    });
-  };
+  const [values, changeHandler] = useState({ title: '', body });
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -29,12 +23,32 @@ export default function Home({ todos }) {
     <>
       <h1>Todos</h1>
       <form onSubmit={submitHandler}>
-        <input onChange={changeHandler} type="text" />
-        <button type="submit">Add</button>
+        <div className="mb-3">
+          <label for="title">Title</label>
+          <input
+            value={values.title}
+            id="title"
+            name="title"
+            onChange={changeHandler}
+            type="text"
+          />
+        </div>
+        <div className="mb-3">
+          <label for="body">Body</label>
+          <textarea
+            value={values.body}
+            id="body"
+            name="body"
+            onChange={changeHandler}
+          />
+        </div>
+        <button className="btn btn-success" type="submit">
+          Add
+        </button>
       </form>
-      <ul>
+      <ul className="list-group">
         {todos.map((todo) => (
-          <li className={todo.completed && 'completed'} key={todo.id}>
+          <li className="list-group-item" key={todo.id}>
             {todo.title}
           </li>
         ))}
