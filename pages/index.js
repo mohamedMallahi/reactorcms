@@ -11,7 +11,7 @@ export default function Home({ posts }) {
     const res = await fetch('/api/posts', {
       method: 'POST',
       body: {
-        title: state.title,
+        ...values,
       },
     });
     const data = await res.json();
